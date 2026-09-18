@@ -1,0 +1,333 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: #d35400; 
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+nav {
+    background-color: #e67e22;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #a04000;
+}
+
+
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+
+.hero {
+    background: #f39c12;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2rem;
+}
+
+.price {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background: #27ae60;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #219150;
+}
+
+
+.contact-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li a {
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
+
+
+.card.mid-autumn {
+    position: relative;
+    overflow: hidden; 
+    border: 2px solid #f1c40f;
+    box-shadow: 0 0 15px rgba(241, 196, 15, 0.4);
+}
+
+
+.badge-season {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #e74c3c;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 10px;
+    z-index: 4;
+}
+
+
+.card.mid-autumn .moon {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    background: #f1c40f;
+    border-radius: 50%;
+    z-index: 2;
+    animation: moonGlow 2s ease-in-out infinite alternate;
+}
+
+
+.card.mid-autumn .cloud {
+    position: absolute;
+    font-size: 20px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.card.mid-autumn .cloud-1 {
+    top: 10px;
+    animation: moveCloud 7s linear infinite;
+}
+
+.card.mid-autumn .cloud-2 {
+    top: 30px;
+    animation: moveCloud 10s linear infinite 3s;
+}
+
+/* 5. Khai báo chuyển động nhấp nháy & trôi mây */
+@keyframes moonGlow {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 8px #f39c12;
+    }
+    100% {
+        transform: scale(1.08);
+        box-shadow: 0 0 18px #f1c40f, 0 0 25px #ffeb3b;
+    }
+}
+
+@keyframes moveCloud {
+    0% {
+        left: -25%;
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        left: 110%;
+        opacity: 0;
+    }
+}
+/* --- HIỆU ỨNG TIÊU ĐỀ SẢN PHẨM BÁN CHẠY --- */
+
+/* 1. Khung chứa chữ chạy từ trái sang phải */
+.animated-title {
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 20px;
+    animation: slideFromLeft 1.2s ease-out forwards;
+}
+
+/* 2. Định dạng từng chữ cái nhảy lần lượt */
+.animated-title span {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff; /* Màu chữ trắng tương thích với giao diện tối */
+    animation: letterBounce 0.5s ease-in-out;
+    animation-delay: calc(0.06s * var(--i)); /* Tạo độ trễ nhảy cho từng chữ */
+}
+
+/* 3. Chuyển động lướt từ trái sang phải */
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 4. Chuyển động nảy nhẹ lên và đổi màu cam tạo điểm nhấn */
+@keyframes letterBounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px); /* Nhảy vọt lên 12px */
+        color: #f39c12; /* Đổi sang màu vàng cam khi nhảy */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+/* --- MÀN HÌNH WAITING / LOADING --- */
+
+/* Khung phủ kín toàn bộ màn hình */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #181818; /* Màu nền tối khớp với giao diện của bạn */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Đảm bảo che lên toàn bộ trang web */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Kích thước ảnh loading */
+.loading-img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Dòng chữ dưới ảnh */
+#preloader p {
+    color: #f39c12;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Class dùng để ẩn màn hình loading đi */
+#preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+}

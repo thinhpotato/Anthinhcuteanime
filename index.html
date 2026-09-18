@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạp Hóa Bình Dân - Trang Chủ</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- MÀN HÌNH LOADING -->
+<div id="preloader">
+    <img src="images/loading.gif" alt="Đang tải..." class="loading-img">
+    <p>Đang tải...Đợi xíu nhé </p>
+</div>
+
+    <header>
+        <h1>TẠP HÓA BÌNH DÂN</h1>
+        <p>Gần gũi - Tiện lợi - Giá cả nhẹ nhàng</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Trang Chủ</a></li>
+            <li><a href="products.html">Sản Phẩm</a></li>
+            <li><a href="about.html">Giới Thiệu</a></li>
+            <li><a href="contact.html">Liên Hệ</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <h2>Chào Mừng Bạn Đến Với Tạp Hóa Bình Dân!</h2>
+            <p>Cung cấp đầy đủ nhu yếu phẩm hàng ngày: Mì tôm, nước giải khát, đồ gia dụng gia đình...</p>
+        </section>
+
+        <h2 class="animated-title">
+    <span style="--i:1">S</span>
+    <span style="--i:2">ả</span>
+    <span style="--i:3">n</span>
+    <span style="--i:4">&nbsp;</span>
+    <span style="--i:5">P</span>
+    <span style="--i:6">h</span>
+    <span style="--i:7">ẩ</span>
+    <span style="--i:8">m</span>
+    <span style="--i:9">&nbsp;</span>
+    <span style="--i:10">B</span>
+    <span style="--i:11">á</span>
+    <span style="--i:12">n</span>
+    <span style="--i:13">&nbsp;</span>
+    <span style="--i:14">C</span>
+    <span style="--i:15">h</span>
+    <span style="--i:16">ạ</span>
+    <span style="--i:17">y</span>
+        </h2>
+        <br>
+        <div class="product-grid">
+            <div class="card">
+                <img src="images/mi-tom.jpg" alt="Mì Tôm Hảo Hảo">
+                <h3>Mì Tôm Hảo Hảo</h3>
+                <p class="price">110.000đ / Thùng</p>
+                <a href="products.html" class="btn">Xem chi tiết</a>
+            </div>
+
+            <div class="card">
+                <img src="images/nuoc-ngot.jpg" alt="Nước Ngọt Coca">
+                <h3>Coca-Cola Lốc 6 Lon</h3>
+                <p class="price">60.000đ / Lốc</p>
+                <a href="products.html" class="btn">Xem chi tiết</a>
+            </div>
+
+            <div class="card">
+                <img src="images/gia-dung.jpg" alt="Bộ Đồ Gia Dụng">
+                <h3>Bộ Nước Rửa Bát</h3>
+                <p class="price">35.000đ / Chai</p>
+                <a href="products.html" class="btn">Xem chi tiết</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Tạp Hóa Bình Dân.</p>
+    </footer>
+<!-- ĐOẠN MÃ LOADING CHỈ CHẠY 1 LẦN DUY NHẤT -->
+    <script>
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            
+            if (preloader) {
+                // Kiểm tra xem người dùng đã từng vào web trong phiên này chưa
+                if (sessionStorage.getItem('hasLoaded')) {
+                    // Nếu ĐÃ VÀO RỒI -> Xóa màn hình loading ngay lập tức
+                    preloader.style.display = 'none';
+                } else {
+                    // Nếu LẦN ĐẦU VÀO -> Chờ 2.5s rồi ẩn và ghi nhớ lại
+                    setTimeout(function() {
+                        preloader.classList.add('hide');
+                        // Đánh dấu là đã vào web rồi
+                        sessionStorage.setItem('hasLoaded', 'true');
+                    }, 2500);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>
+</body>
+</html>
