@@ -258,12 +258,13 @@ footer {
     animation: slideFromLeft 1.2s ease-out forwards;
 }
 
+
 /* 2. Định dạng từng chữ cái nhảy lần lượt */
 .animated-title span {
     display: inline-block;
     font-size: 1.8rem;
     font-weight: bold;
-    color: #ffffff; /* Màu chữ trắng tương thích với giao diện tối */
+    color:black ; /* Màu chữ trắng tương thích với giao diện tối */
     animation: letterBounce 0.5s ease-in-out;
     animation-delay: calc(0.06s * var(--i)); /* Tạo độ trễ nhảy cho từng chữ */
 }
