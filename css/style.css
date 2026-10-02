@@ -332,3 +332,264 @@ footer {
     opacity: 0;
     visibility: hidden;
 }
+/* ==========================================================
+   1. RESET BẢO BỆNH KHÔNG BỊ TRÀN MÀN HÌNH (NO OVERFLOW)
+   ========================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-color: #27ae60;
+    --accent-color: #f39c12;
+    --dark-color: #2c3e50;
+    --light-bg: #f9f9f9;
+    --white: #ffffff;
+    --text-color: #333333;
+    --border-color: #e0e0e0;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Chặn tuyệt đối thanh cuộn ngang */
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Đảm bảo hình ảnh không bị méo hoặc tràn khỏi khung */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* ==========================================================
+   2. BỐ CỤC CHUNG (DESKTOP MAC ĐỊNH)
+   ========================================================== */
+header {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo h1 {
+    font-size: 22px;
+    color: var(--accent-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+nav a:hover, nav a.active {
+    background-color: var(--primary-color);
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 25px auto;
+}
+
+/* HERO BANNER */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/cua-hang.jpg') center/cover no-repeat;
+    background-color: var(--dark-color);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.hero h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* GRID LAYOUT (Mặc định 3-4 cột trên Desktop) */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card img {
+    height: 180px;
+    width: 100%;
+}
+
+.card-body {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 17px;
+    margin-bottom: 8px;
+    color: var(--dark-color);
+}
+
+.price {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: #219150;
+}
+
+/* FORM */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 5%;
+    margin-top: 40px;
+}
+
+/* ==========================================================
+   3. MEDIA QUERIES RESPONSIVE (THEO YÊU CẦU CỦA THẦY)
+   ========================================================== */
+
+/* TABLET (Kích thước từ 768px đến 1023px) */
+@media (max-width: 1023px) {
+    main {
+        width: 92%;
+    }
+
+    .grid-layout {
+        grid-template-columns: repeat(2, 1fr); /* Ép về 2 cột trên Tablet */
+    }
+
+    .hero h2 {
+        font-size: 26px;
+    }
+}
+
+/* ==========================================================
+   TỐI ƯU MENU FULL CỘT TRÊN MOBILE (KÍCH THƯỚC DƯỚI 767PX)
+   ========================================================== */
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 0 0 0;
+        gap: 10px;
+    }
+
+    /* Đảm bảo khung menu tràn 100% màn hình */
+    nav {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav li {
+        width: 100%;
+    }
+
+    /* Ép tất cả các ô nút bấm dãn trọn 100% chiều ngang */
+    nav a {
+        display: block;
+        width: 100%;
+        border-radius: 0; /* Bỏ bo góc để tạo thanh menu phẳng */
+        padding: 12px 15px;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Đường viền nhẹ ngăn cách các ô */
+    }
+
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .grid-layout {
+        grid-template-columns: 1fr; /* Thu về 1 cột dọc */
+        gap: 15px;
+    }
+}
